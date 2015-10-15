@@ -237,7 +237,7 @@
 
 
 ;; cmake mode
-(setq load-path (cons (expand-file-name "/home/johny/.emacs.d/elpa/cmake-mode-20150728.708/") load-path))
+(setq load-path (cons (expand-file-name "~/.emacs.d/elpa/cmake-mode-20150728.708/") load-path))
  (require 'cmake-mode)
 
 
