@@ -9,13 +9,6 @@ alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 alias cd.="gotoCurrentSVNBranchRoot"
 
-#Set the brightness of screen
-# you need to install xblacklight(sudo apt-get install xblacklight)
-xbacklight -set 20
-
-#Disable trackpad mouse
-xinput set-prop 11 "Device Enabled" 0
-
 #Set a fancy color prompt with last 2 dirs
 function PWD_LAST_TWO_DIR
 {
@@ -23,35 +16,12 @@ function PWD_LAST_TWO_DIR
 }
 export PS1="\[\033[0;32m\]\u@\h \[\033[33m\]\$(PWD_LAST_TWO_DIR)\[\033[0m\] \$ ";
 
-#Make df smarter
-alias df="df -h"
-
 #Make ls smarter
 alias ll="ls -alFh"
 
-#reboot
-alias reboot="sudo reboot"
-
-#shutdown
-alias off="sudo shutdown -h 0"
-
 #Extras
 
-#Find out about Linux Distribution Name and Version
-alias systemInfo="cat /etc/*-release"
-alias systemInfo1="lsb_release -a"
-
-#Find out about kernel version
-alias kernelVersion="uname -mrs"
-
-#Find size of current folder
-alias showSize="du -sh"
-
-#Show directories and their sizes
-alias showSizes="du -csh *"
-
-#Show USB Devices
-alias showUsbDevices="lsusb"
+alias cls="clear"
 
 #Find and replace recursively first string with second string
 #Eg: replaceAll yellow blue
@@ -145,3 +115,17 @@ makeSVN()
     make $1
     cd $currentPath 
 }
+
+# cmake
+alias cmake-debug="cmake -D CMAKE_BUILD_TYPE=Debug .."
+
+disableMousePad()
+{
+    #xinput list - will give the id of the input device
+    declare deviceId=`xinput list | grep -i "synaptic" | cut -f2 | cut -d= -f2`
+    xinput set-prop $deviceId "Device Enabled" 0
+}
+
+#Disable trackpad mouse
+disableMousePad
+
