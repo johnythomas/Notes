@@ -19,6 +19,27 @@ ps -u username --forest
 
 #find the size of a folder
 du -sh
+#find directories and their sizes
+du -csh *
+
+
+#Find out about Linux Distribution Name and Version
+cat /etc/*-release
+lsb_release -a
+
+#Find out about kernel version
+uname -mrs
+
+#Show USB Devices
+lsusb
+
+#show the list of input devices
+xinput list
+
+#disable an input device(0 to disable and 1 to enable)
+xinput set-prop device_Id "Device Enabled" 0
+
+
 
 
 
