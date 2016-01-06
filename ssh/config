@@ -1,0 +1,9 @@
+KeepAlive yes
+ServerAliveInterval 30
+
+ControlMaster auto
+ControlPath ~/.ssh/control:%h:%p:%r
+
+Host aws
+     User username
+     HostName address
