@@ -1,9 +1,0 @@
-KeepAlive yes
-ServerAliveInterval 30
-
-ControlMaster auto
-ControlPath ~/.ssh/control:%h:%p:%r
-
-Host aws
-     User jthomas
-     HostName ec2-174-129-121-157.compute-1.amazonaws.com
