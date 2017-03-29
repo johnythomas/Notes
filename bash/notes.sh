@@ -46,3 +46,6 @@ sudo apt-get install -f
 # find the network card
 lspci | awk '/[Nn]et/ {print $1}' | xargs -i% lspci -ks %
 lspci | grep -i net
+
+# restart network manager
+sudo service network-manager restart
